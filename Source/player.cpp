@@ -66,10 +66,10 @@ void Player::Update()
 	}
 
 	Camera* pCamera = GetScene()->FindGameObject<Camera>();
-	//cameraクラスからマウスのワールド座標を取得
-	VECTOR MousPos = pCamera->vec;
-	//マウスの座標をトランスフォーム
-	//VECTOR cTarget = VTransform((MousPos), rotationY);
+	////cameraクラスからマウスのワールド座標を取得
+	//VECTOR MousPos = pCamera->vec;
+	////マウスの座標をトランスフォーム
+	////VECTOR cTarget = VTransform((MousPos), rotationY);
 
 
 	VECTOR cTarget = VTransform(VGet(0, 0, 100.0f), rotationY);

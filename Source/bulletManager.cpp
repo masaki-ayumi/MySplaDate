@@ -13,6 +13,7 @@ BulletManager::~BulletManager()
 		it = bullets.erase(it);
 	}
 	bullets.clear();
+	
 }
 
 void BulletManager::Update()

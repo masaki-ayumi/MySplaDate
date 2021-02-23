@@ -42,4 +42,10 @@ void PlayScene::Draw()
 	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));
 
 	DrawString(100, 400, "Push [T]Key To Title", GetColor(255, 255, 255));
+	
+	
+	
+	int aimGraph;//Æ€—p‰æ‘œ‚Ìƒnƒ“ƒhƒ‹
+	aimGraph = LoadGraph("data\\graph\\aim.png");
+	DrawGraph(400, 300, aimGraph, true);
 }
