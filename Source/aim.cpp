@@ -3,6 +3,8 @@
 Aim::Aim(SceneBase * scene)
 {
 	aimGraph = LoadGraph("data\\graph\\aim.png");
+	//マウスの位置を画面中央に固定
+	SetMousePoint(400, 300);
 }
 
 Aim::~Aim()
@@ -12,9 +14,12 @@ Aim::~Aim()
 
 void Aim::Update()
 {
+	GetMousePoint(&mouseX, &mouseY);
+	graphX = mouseX - GRAPH_HALF;
+	graphY = mouseY - GRAPH_HALF+100;
 }
 
 void Aim::Draw()
 {
-	DrawGraph(400-32, 300-32, aimGraph, true);
+	DrawGraph(graphX, graphY, aimGraph, true);
 }

@@ -24,6 +24,9 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 
 	//マウスの座標を取得
 	GetMousePoint(&Mx, &My);
+	float Near = 10.0f;
+	float Far = 500.0f;
+	SetCameraNearFar(Near, Far);
 
 	//マウスポインタがある画面座標をワールド座標に変換して代入
 	worldPos = ConvScreenPosToWorldPos(VGet(Mx, My, 1.0f));

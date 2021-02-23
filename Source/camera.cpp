@@ -9,11 +9,10 @@ Camera::Camera(SceneBase * scene) : GameObject(scene)
 	rotation = VGet(0, 0, 0);
 	target = VGet(0, 0, 0);
 	Near = 10.0f;
-	Far = 5000.0f;
+	Far = 500.0f;
 	vec = VGet(0, 0, 0);
 	key = VGet(100.0f, 150.0f, -200.0f);
-	//マウスの位置を画面中央に固定
-	SetMousePoint(400, 300);
+	
 }
 
 Camera::~Camera()
@@ -28,7 +27,7 @@ void Camera::Update()
 	vec = ConvScreenPosToWorldPos(VGet(Mx, My, 1.0f));
 	DebugSetColor(0, 0, 0);
 	DebugPrintf(0, 100, "mouseX=%d,mouseY=%d", Mx, My);
-	DebugPrintf(0, 120, "マウスの座標X:%f,Y:%f,Z:%f", vec.x, vec.y, vec.z);
+	DebugPrintf(0, 220, "マウスの座標X:%f,Y:%f,Z:%f", vec.x, vec.y, vec.z);
 	//if (CheckHitKey(KEY_INPUT_UP))
 	//	key.y += 10.0f;
 	//if (CheckHitKey(KEY_INPUT_DOWN))
@@ -41,7 +40,7 @@ void Camera::Update()
 
 void Camera::Draw()
 {
-	//SetCameraNearFar(Near, Far);
+	SetCameraNearFar(Near, Far);
 	//自機の後ろに固定
 	SetCameraPositionAndTarget_UpVecY(position, target);
 
