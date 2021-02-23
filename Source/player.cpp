@@ -74,7 +74,7 @@ void Player::Update()
 
 	VECTOR cTarget = VTransform(VGet(0, 0, 100.0f), rotationY);
 	pCamera->SetTarget(VAdd(position, cTarget));
-	VECTOR cPosition = VTransform(VGet(0, 50.0f, -100.0f), rotationY);
+	VECTOR cPosition = VTransform(VGet(0, 40.0f, -70.0f), rotationY);
 	pCamera->SetPosition(VAdd(position, cPosition));
 
 	Weapon* pWeapon = GetScene()->FindGameObject<Weapon>();

@@ -3,7 +3,8 @@
 
 Camera::Camera(SceneBase * scene) : GameObject(scene)
 {
-	position = VGet(100.0f, 150.0f, -200.0f);
+	//position = VGet(100.0f, 150.0f, -200.0f);
+	position = VGet(0,0,0);
 	//target = VGet(0, 100, 0);
 	rotation = VGet(0, 0, 0);
 	target = VGet(0, 0, 0);
@@ -11,6 +12,8 @@ Camera::Camera(SceneBase * scene) : GameObject(scene)
 	Far = 5000.0f;
 	vec = VGet(0, 0, 0);
 	key = VGet(100.0f, 150.0f, -200.0f);
+	//マウスの位置を画面中央に固定
+	SetMousePoint(400, 300);
 }
 
 Camera::~Camera()

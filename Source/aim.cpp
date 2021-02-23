@@ -16,5 +16,5 @@ void Aim::Update()
 
 void Aim::Draw()
 {
-	DrawGraph(400, 300, aimGraph, true);
+	DrawGraph(400-32, 300-32, aimGraph, true);
 }
