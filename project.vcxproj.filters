@@ -34,6 +34,7 @@
     <ClCompile Include="Source\bullet.cpp" />
     <ClCompile Include="Source\bulletManager.cpp" />
     <ClCompile Include="Source\target.cpp" />
+    <ClCompile Include="Source\aim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\config.h" />
@@ -70,6 +71,7 @@
     <ClInclude Include="Source\bullet.h" />
     <ClInclude Include="Source\bulletManager.h" />
     <ClInclude Include="Source\target.h" />
+    <ClInclude Include="Source\aim.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">

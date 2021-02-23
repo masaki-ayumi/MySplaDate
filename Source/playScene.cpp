@@ -8,6 +8,7 @@
 #include "weapon.h"
 #include "bulletManager.h"
 #include "target.h"
+#include "aim.h"
 
 
 PlayScene::PlayScene()
@@ -20,6 +21,8 @@ PlayScene::PlayScene()
 	CreateGameObject<Weapon>();
 	CreateGameObject<BulletManager>();
 	CreateGameObject<Target>();
+	Aim*pAim = CreateGameObject<Aim>();
+	SetDrawOrder(pAim, 100);
 }
 
 PlayScene::~PlayScene()
@@ -45,7 +48,5 @@ void PlayScene::Draw()
 	
 	
 	
-	int aimGraph;//Æ€—p‰æ‘œ‚Ìƒnƒ“ƒhƒ‹
-	aimGraph = LoadGraph("data\\graph\\aim.png");
-	DrawGraph(400, 300, aimGraph, true);
+	
 }

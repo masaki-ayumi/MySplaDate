@@ -11,8 +11,6 @@ Camera::Camera(SceneBase * scene) : GameObject(scene)
 	Far = 5000.0f;
 	vec = VGet(0, 0, 0);
 	key = VGet(100.0f, 150.0f, -200.0f);
-
-
 }
 
 Camera::~Camera()
