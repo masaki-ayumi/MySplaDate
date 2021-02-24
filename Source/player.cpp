@@ -52,7 +52,10 @@ void Player::Update()
 	if (GetMouseInput()&MOUSE_INPUT_LEFT) //インク発射
 	{
 		BulletManager* bulletManager = GetScene()->FindGameObject<BulletManager>();
-		bulletManager->Create(position, VGet(0, 0, 10.0f));
+		//bulletManager->Create(position, VGet(10.0f, 10.0f, 10.0f));
+		Weapon* weapon = GetScene()->FindGameObject<Weapon>();
+		//武器の座標に弾を生成
+		bulletManager->Create(weapon->position, VGet(10.0f, 10.0f, 10.0f));
 	}
 
 	VECTOR upper = VAdd(position, VGet(0, 1000, 0));//10m上
@@ -77,6 +80,7 @@ void Player::Update()
 	VECTOR cPosition = VTransform(VGet(0, 40.0f, -70.0f), rotationY);
 	pCamera->SetPosition(VAdd(position, cPosition));
 
+	//武器に自機の座標を渡す
 	Weapon* pWeapon = GetScene()->FindGameObject<Weapon>();
 	pWeapon->SetPlayerPosition(position);
 
