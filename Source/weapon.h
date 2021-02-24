@@ -8,11 +8,13 @@ public:
 	~Weapon();
 	void Update();
 	void Draw();
-	void SetPlayerPosition(VECTOR _position);//自機の座標を入れる
+	void SetPlayerPosition(VECTOR _position);//自機の座標を取得
+	void SetPlayerMatrix(MATRIX _rotationY) { mRotationY = _rotationY; }//自機の回転行列を取得
 	VECTOR position;
 private:
 	bool isShot = false;//自機が弾を撃ったらtrue
 	int hModel;
 	VECTOR rotation;
 	VECTOR velocity;
+	MATRIX mRotationY;//回転行列
 };
