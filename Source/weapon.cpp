@@ -50,6 +50,7 @@ void Weapon::SetPlayerPosition(VECTOR _position)
 	//Bullet*pBullet = GetScene()->FindGameObject<Bullet>();
 	//pBullet->SetPosition(position);
 
+	//自機の頭上に座標をセット
 	position = VAdd(_position,VGet(0,20.0f,0.0f));
 	//position = _position;
 }
