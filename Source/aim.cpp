@@ -16,7 +16,7 @@ void Aim::Update()
 {
 	GetMousePoint(&mouseX, &mouseY);
 	graphX = mouseX - GRAPH_HALF;
-	graphY = mouseY - GRAPH_HALF+100;
+	graphY = mouseY - GRAPH_HALF;
 }
 
 void Aim::Draw()
