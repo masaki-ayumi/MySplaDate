@@ -14,6 +14,10 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 	//position = VAdd(pos,VGet(GetRand(3),20.0f,10.0f));//弾の発射原点の位置
 	//position = VAdd(pos, VGet(ir, 10.0f, 10.0f));//弾の発射原点の位置
 
+	DebugSetColor(0, 0, 0);
+	DebugPrintf(0, 300, "弾発射原点X:%f,Y:%f,Z:%f", pos.x, pos.y, pos.z);
+
+
 	position = VAdd(pos, VGet(ir, 0.0f, 0.0f));//弾の発射原点の位置
 	velocity = vel;//弾の移動値を代入
 	playerPosition = pos;//自機の座標を代入
@@ -91,7 +95,7 @@ void Bullet::Draw()
 	//if (isShot)
 		//DrawSphere3D(VAdd(position, velocity), 10, 16, GetColor(255, 0, 0), GetColor(255, 0, 0), true);
 	DrawSphere3D(position, 1, 16, GetColor(240, 30, 112), GetColor(240, 30, 112), true);
-
+	
 	//DrawLine3D(playerPosition, worldPos, GetColor(255, 255, 0));
 }
 
