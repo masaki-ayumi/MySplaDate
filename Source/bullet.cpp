@@ -12,8 +12,10 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 	//double fr;
 	//fr = (double)ir % dbl;
 	//position = VAdd(pos,VGet(GetRand(3),20.0f,10.0f));//弾の発射原点の位置
-	position = VAdd(pos, VGet(ir, 10.0f, 10.0f));//弾の発射原点の位置
-	velocity = vel;//自機のベロシティを代入
+	//position = VAdd(pos, VGet(ir, 10.0f, 10.0f));//弾の発射原点の位置
+
+	position = VAdd(pos, VGet(ir, 0.0f, 0.0f));//弾の発射原点の位置
+	velocity = vel;//弾の移動値を代入
 	playerPosition = pos;//自機の座標を代入
 	rotation = VGet(0, 0, 0);//角度の初期化
 	vector = VGet(0, 0, 0);//弾のベクトルの初期化
@@ -62,9 +64,9 @@ void Bullet::Update()
 	
 
 	//前進処理
-	position.x += vector.x*10;
-	position.y += vector.y*10;
-	position.z += vector.z*10;
+	position.x += vector.x*velocity.x;
+	position.y += vector.y*velocity.y;
+	position.z += vector.z*velocity.z;
 
 #if 0
 
