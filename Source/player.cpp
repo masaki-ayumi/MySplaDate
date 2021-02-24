@@ -38,15 +38,15 @@ void Player::Update()
 	}
 	if (CheckHitKey(KEY_INPUT_D))//‰E
 	{
-		//rotation.y += 3.0*DX_PI_F / 180.0f;//ù‰ñ
-		VECTOR velocity = VTransform(VGet(5.0f, 0, 0), rotationY);
-		position = VAdd(position, velocity);
+		rotation.y += 3.0*DX_PI_F / 180.0f;//ù‰ñ
+		//VECTOR velocity = VTransform(VGet(5.0f, 0, 0), rotationY);
+		//position = VAdd(position, velocity);
 	}
 	if (CheckHitKey(KEY_INPUT_A))//¶
 	{
-		//rotation.y -= 3.0*DX_PI_F / 180.0f;
-		VECTOR velocity = VTransform(VGet(-5.0f, 0, 0), rotationY);
-		position = VAdd(position, velocity);
+		rotation.y -= 3.0*DX_PI_F / 180.0f;
+		//VECTOR velocity = VTransform(VGet(-5.0f, 0, 0), rotationY);
+		//position = VAdd(position, velocity);
 	}
 
 	if (GetMouseInput()&MOUSE_INPUT_LEFT) //ƒCƒ“ƒN”­ŽË
@@ -90,6 +90,7 @@ void Player::Draw()
 {
 	//MV1SetRotationXYZ(hModel, rotation);
 	//MV1SetPosition(hModel, position);
+
 	MATRIX matrix;
 	//ˆÚ“®s—ñ
 	MATRIX mTranslate = MGetTranslate(position);
@@ -97,6 +98,10 @@ void Player::Draw()
 	MATRIX mRotationY = MGetRotY(rotation.y);
 	//‰ñ“]‚µ‚Ä‚©‚çˆÚ“®
 	matrix = MMult(mRotationY, mTranslate);
+
+	Weapon* weapon = GetScene()->FindGameObject<Weapon>();
+	//Ž©‹@‚Ì‰ñ“]s—ñ‚ð“n‚·
+	weapon->SetPlayerMatrix(mRotationY);
 
 	MV1SetMatrix(hModel, matrix);
 	MV1DrawModel(hModel);
