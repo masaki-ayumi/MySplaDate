@@ -16,9 +16,11 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 
 	DebugSetColor(0, 0, 0);
 	DebugPrintf(0, 300, "弾発射原点X:%f,Y:%f,Z:%f", pos.x, pos.y, pos.z);
+	DebugPrintf(0, 320, "乱数:%d",ir);
 
 
-	position = VAdd(pos, VGet(ir, 0.0f, 0.0f));//弾の発射原点の位置
+	//position = VAdd(pos, VGet(ir, 0.0f, 0.0f));//弾の発射原点の位置
+	position = VAdd(pos, VGet(0, 0.0f, 0.0f));//弾の発射原点の位置
 	velocity = vel;//弾の移動値を代入
 	playerPosition = pos;//自機の座標を代入
 	rotation = VGet(0, 0, 0);//角度の初期化
@@ -35,7 +37,7 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 	SetCameraNearFar(Near, Far);
 
 	//マウスポインタがある画面座標をワールド座標に変換して代入
-	worldPos = ConvScreenPosToWorldPos(VGet(Mx, My, 1.0f));
+	worldPos = ConvScreenPosToWorldPos(VGet(Mx+ir, My, 1.0f));
 }
 
 Bullet::~Bullet()
