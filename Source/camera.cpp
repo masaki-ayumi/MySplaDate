@@ -27,7 +27,7 @@ void Camera::Update()
 	vec = ConvScreenPosToWorldPos(VGet(Mx, My, 1.0f));
 	DebugSetColor(0, 0, 0);
 	DebugPrintf(0, 100, "mouseX=%d,mouseY=%d", Mx, My);
-	DebugPrintf(0, 220, "マウスの座標X:%f,Y:%f,Z:%f", vec.x, vec.y, vec.z);
+	DebugPrintf(0, 220, "マウスの座標X:%f,Y:%f,Z:%f", vec.x/100, vec.y/100, vec.z/100);
 	//if (CheckHitKey(KEY_INPUT_UP))
 	//	key.y += 10.0f;
 	//if (CheckHitKey(KEY_INPUT_DOWN))
@@ -40,7 +40,7 @@ void Camera::Update()
 
 void Camera::Draw()
 {
-	SetCameraNearFar(Near, Far);
+	//SetCameraNearFar(Near, Far);
 	//自機の後ろに固定
 	SetCameraPositionAndTarget_UpVecY(position, target);
 

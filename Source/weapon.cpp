@@ -45,13 +45,14 @@ void Weapon::Draw()
 	//‰ñ“]‚µ‚Ä‚©‚çˆÚ“®
 	matrix = MMult(mRotationY, mTranslate);
 
+	MATRIX scale = MGetScale(VGet(100, 100, 100));
 
-
-	MV1SetScale(hModel, VGet(5, 5, 5));
+	//MV1SetScale(hModel, VGet(5, 5, 5));
+	MV1SetMatrix(hModel, scale);
 	//MV1SetPosition(hModel,position);
 	MV1SetMatrix(hModel, matrix);
 	MV1DrawModel(hModel);
-		//DrawSphere3D(VGet(0, 100.0f, 0), 10, 16, GetColor(255, 255, 255), GetColor(255, 255, 255), true);
+		//DrawSphere3D(position, 1, 16, GetColor(255, 255, 255), GetColor(255, 255, 255), true);
 	//if(isShot)
 	//DrawSphere3D(VAdd(position,velocity), 10, 16, GetColor(255, 0, 0), GetColor(255, 0, 0), true);
 }
