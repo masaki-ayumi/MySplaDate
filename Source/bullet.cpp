@@ -15,32 +15,34 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 	//position = VAdd(pos, VGet(ir, 10.0f, 10.0f));//弾の発射原点の位置
 
 	DebugSetColor(0, 0, 0);
-	DebugPrintf(0, 300, "弾発射原点X:%f,Y:%f,Z:%f", pos.x, pos.y, pos.z);
-	DebugPrintf(0, 320, "乱数:%d",ir);
+	//DebugPrintf(0, 300, "弾発射原点X:%f,Y:%f,Z:%f", pos.x, pos.y, pos.z);
+	//DebugPrintf(0, 320, "乱数:%d",ir);
 
 
 	//position = VAdd(pos, VGet(ir, 0.0f, 0.0f));//弾の発射原点の位置
-	position = VAdd(pos, VGet(0, 0.0f, 0.0f));//弾の発射原点の位置
-	velocity = vel;//弾の移動値を代入
-	playerPosition = pos;//自機の座標を代入
-	rotation = VGet(0, 0, 0);//角度の初期化
-	vector = VGet(0, 0, 0);//弾のベクトルの初期化
-
-
-	//自機の座標と弾の座標を引いてベクトルを取得
-	//vector = VSub(position, playerPosition);
-	vector = VSub(position, playerPosition);
-	//ベクトルの正規化
-	//vector = VNorm(vector);
+	position		= pos;//弾の発射原点の位置
+	velocity		= vel;//弾の移動値を代入
+	playerPosition	= pos;//自機の座標を代入
+	rotation		= VGet(0, 0, 0);//角度の初期化
+	vector			= VGet(0, 0, 0);//弾のベクトルの初期化
 
 	//マウスの座標を取得
 	GetMousePoint(&Mx, &My);
+	//マウスポインタがある画面座標をワールド座標に変換して代入
+	worldPos = ConvScreenPosToWorldPos(VGet(Mx+ir, My, 1.0f));
+
+	
+
+	//自機の座標とマウスのワールド座標を引いて弾のベクトルを取得
+	//vector = VSub(position, playerPosition);
+	vector = VSub(worldPos, playerPosition);
+	//ベクトルの正規化
+	//vector = VNorm(vector);
+
 	//float Near = 10.0f;
 	//float Far = 500.0f;
 	//SetCameraNearFar(Near, Far);
 
-	//マウスポインタがある画面座標をワールド座標に変換して代入
-	worldPos = ConvScreenPosToWorldPos(VGet(Mx+ir, My, 1.0f));
 }
 
 Bullet::~Bullet()
@@ -67,8 +69,9 @@ void Bullet::Update()
 	//}
 	//position = VAdd(position, vector);
 
-	//ワールド座標のベクトルの正規化
-	vector = VNorm(worldPos);
+	//弾のベクトルの正規化
+	//vector = VNorm(worldPos);
+	vector = VNorm(vector);
 
 	
 
@@ -76,6 +79,7 @@ void Bullet::Update()
 	position.x += vector.x*velocity.x;
 	position.y += vector.y*velocity.y;
 	position.z += vector.z*velocity.z;
+	
 
 #if 0
 
