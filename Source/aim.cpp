@@ -1,10 +1,11 @@
 #include "aim.h"
+#include "config.h"
 
 Aim::Aim(SceneBase * scene)
 {
 	aimGraph = LoadGraph("data\\graph\\aim.png");
 	//マウスの位置を画面中央に固定
-	SetMousePoint(400, 300);
+	SetMousePoint(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 }
 
 Aim::~Aim()
