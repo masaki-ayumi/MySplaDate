@@ -6,7 +6,7 @@
 
 Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 {
-	int ir = rand() % 20 - 10;//-2～2までの乱数生成
+	int ir = rand() % 40 - 20;//-2～2までの乱数生成
 	//ir = ir * 1.3;
 	//double dbl = 10.0;
 	//double fr;
@@ -25,16 +25,19 @@ Bullet::Bullet(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 	playerPosition = pos;//自機の座標を代入
 	rotation = VGet(0, 0, 0);//角度の初期化
 	vector = VGet(0, 0, 0);//弾のベクトルの初期化
+
+
 	//自機の座標と弾の座標を引いてベクトルを取得
+	//vector = VSub(position, playerPosition);
 	vector = VSub(position, playerPosition);
 	//ベクトルの正規化
 	//vector = VNorm(vector);
 
 	//マウスの座標を取得
 	GetMousePoint(&Mx, &My);
-	float Near = 10.0f;
-	float Far = 500.0f;
-	SetCameraNearFar(Near, Far);
+	//float Near = 10.0f;
+	//float Far = 500.0f;
+	//SetCameraNearFar(Near, Far);
 
 	//マウスポインタがある画面座標をワールド座標に変換して代入
 	worldPos = ConvScreenPosToWorldPos(VGet(Mx+ir, My, 1.0f));
