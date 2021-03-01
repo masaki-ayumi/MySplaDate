@@ -13,7 +13,7 @@ public:
 	~Bullet();
 	void Update();
 	void Draw();
-	//void SetPosition(VECTOR _position);
+	int GetRandom(int n) { return GetRand(2 * n) - n; };
 
 	
 	bool isShot = false;
