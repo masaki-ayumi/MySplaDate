@@ -21,10 +21,13 @@ Camera::~Camera()
 
 void Camera::Update()
 {
-	//MATRIX rotY = MGetRotY(rotation.y);
+	MATRIX rotY = MGetRotY(rotation.y);
 
 	GetMousePoint(&Mx, &My);
 	vec = ConvScreenPosToWorldPos(VGet(Mx, My, 1.0f));
+
+	 cTarget = VTransform(vec, rotY);
+
 	DebugSetColor(0, 0, 0);
 	//DebugPrintf(0, 100, "mouseX=%d,mouseY=%d", Mx, My);
 	//DebugPrintf(0, 220, "マウスの座標X:%f,Y:%f,Z:%f", vec.x, vec.y, vec.z);
@@ -42,7 +45,9 @@ void Camera::Draw()
 {
 	//SetCameraNearFar(Near, Far);
 	//自機の後ろに固定
-	SetCameraPositionAndTarget_UpVecY(position, target);
+	//SetCameraPositionAndTarget_UpVecY(position, target);
+	
+	SetCameraPositionAndTarget_UpVecY(position, cTarget);
 
 	//マウスの座標をターゲットに設定(カメラぐるぐる)
 	//SetCameraPositionAndTarget_UpVecY(position,vec);

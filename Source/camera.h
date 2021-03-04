@@ -16,6 +16,7 @@ private:
 	VECTOR rotation;
 	VECTOR target;
 	VECTOR key; //–îˆó
+	VECTOR cTarget;
 	float Near, Far;
 	int Mx, My;
 };

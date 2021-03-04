@@ -55,7 +55,7 @@ void Player::Update()
 		TranslateMove(rotationY);
 		break;
 	case false://’e‚ğ”­Ë‚µ‚Ä‚¢‚È‚¢‚Æ‚«‰ñ“]‚·‚éˆÚ“®
-		RotationMove(rotationY);
+		RotationMove();
 		break;
 	}
 
@@ -79,8 +79,8 @@ void Player::Update()
 	////VECTOR cTarget = VTransform((MousPos), rotationY);
 
 
-	VECTOR cTarget = VTransform(VGet(0, 0, 100.0f), rotationY);
-	pCamera->SetTarget(VAdd(position, cTarget));
+	//VECTOR cTarget = VTransform(VGet(0, 0, 100.0f), rotationY);
+	//pCamera->SetTarget(VAdd(position, cTarget));
 	VECTOR cPosition = VTransform(VGet(0, 40.0f, -70.0f), rotationY);
 	pCamera->SetPosition(VAdd(position, cPosition));
 
@@ -111,6 +111,8 @@ void Player::Draw()
 	MV1DrawModel(hModel);
 }
 
+
+//•½sˆÚ“®‚ÌŠÖ”
 void Player::TranslateMove(MATRIX rotationY)
 {
 	if (CheckHitKey(KEY_INPUT_D))//‰E
@@ -125,7 +127,9 @@ void Player::TranslateMove(MATRIX rotationY)
 	}
 }
 
-void Player::RotationMove(MATRIX rotationY)
+
+//‰ñ“]‚ğ‚·‚éˆÚ“®‚ÌŠÖ”
+void Player::RotationMove()
 {
 	if (CheckHitKey(KEY_INPUT_D))//‰E
 	{
