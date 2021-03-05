@@ -12,7 +12,6 @@ public:
 	void SetPlayerMatrix(MATRIX _rotationY) { mRotationY = _rotationY; }//©‹@‚Ì‰ñ“]s—ñ‚ğæ“¾
 	VECTOR position;
 private:
-	bool isShot = false;//©‹@‚ª’e‚ğŒ‚‚Á‚½‚çtrue
 	int hModel;
 	VECTOR rotation;
 	VECTOR velocity;

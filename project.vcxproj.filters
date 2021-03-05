@@ -31,10 +31,10 @@
     <ClCompile Include="Source\camera.cpp" />
     <ClCompile Include="Source\field.cpp" />
     <ClCompile Include="Source\weapon.cpp" />
-    <ClCompile Include="Source\bullet.cpp" />
-    <ClCompile Include="Source\bulletManager.cpp" />
     <ClCompile Include="Source\target.cpp" />
     <ClCompile Include="Source\aim.cpp" />
+    <ClCompile Include="Source\shot.cpp" />
+    <ClCompile Include="Source\shotManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\config.h" />
@@ -68,10 +68,10 @@
     <ClInclude Include="Source\player.h" />
     <ClInclude Include="Source\field.h" />
     <ClInclude Include="Source\weapon.h" />
-    <ClInclude Include="Source\bullet.h" />
-    <ClInclude Include="Source\bulletManager.h" />
     <ClInclude Include="Source\target.h" />
     <ClInclude Include="Source\aim.h" />
+    <ClInclude Include="Source\shot.h" />
+    <ClInclude Include="Source\shotManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">

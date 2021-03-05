@@ -6,7 +6,7 @@
 #include "player.h"
 #include "field.h"
 #include "weapon.h"
-#include "bulletManager.h"
+#include "shotManager.h"
 #include "target.h"
 #include "aim.h"
 
@@ -19,7 +19,7 @@ PlayScene::PlayScene()
 	SetDrawOrder(pCamera, 1);
 	CreateGameObject<Field>();
 	CreateGameObject<Weapon>();
-	CreateGameObject<BulletManager>();
+	CreateGameObject<ShotManager>();
 	CreateGameObject<Target>();
 	Aim*pAim = CreateGameObject<Aim>();
 	SetDrawOrder(pAim, 100);

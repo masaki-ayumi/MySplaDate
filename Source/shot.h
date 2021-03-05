@@ -1,24 +1,23 @@
 #pragma once
 #include "../Library/gameObject.h"
 
-class Bullet :public GameObject {
+class Shot :public GameObject {
 public:
 	/// <summary>
 	/// Bulletのインスタンスを作るときに自機位置と移動値を受け取る
 	/// </summary>
 	/// <param name="scene"></param>
-	/// <param name="pos">自機位置</param>
+	/// <param name="pos">プレイヤー位置</param>
 	/// <param name="vel">移動値</param>
-	Bullet(SceneBase* scene,VECTOR pos,VECTOR vel);
-	~Bullet();
+	Shot(SceneBase* scene,VECTOR pos,VECTOR vel);
+	~Shot();
 	void Update();
 	void Draw();
+	//-nからnまでの乱数を取得
 	int GetRandom(int n) { return GetRand(2 * n) - n; };
 
 	
-	bool isShot = false;
 	int Mx, My;//マウスのスクリーン座標
-	float shotspeed = 8.0f;
 	VECTOR position;
 	VECTOR rotation;
 	VECTOR velocity;

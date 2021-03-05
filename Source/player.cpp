@@ -4,8 +4,8 @@
 #include "camera.h"
 #include "field.h"
 #include "weapon.h"
-#include "bullet.h"
-#include "bulletManager.h"
+#include "shot.h"
+#include "shotManager.h"
 
 Player::Player(SceneBase * scene) :GameObject(scene)
 {
@@ -29,11 +29,10 @@ void Player::Update()
 	if (GetMouseInput()&MOUSE_INPUT_LEFT) //弾発射
 	{
 		isShot = true;
-		BulletManager* bulletManager = GetScene()->FindGameObject<BulletManager>();
-		//bulletManager->Create(position, VGet(10.0f, 10.0f, 10.0f));
+		ShotManager* shotManager = GetScene()->FindGameObject<ShotManager>();
 		Weapon* weapon = GetScene()->FindGameObject<Weapon>();
 		//武器の座標に弾を生成
-		bulletManager->Create(weapon->position, VGet(10.0f, 10.0f, 10.0f));
+		shotManager->Create(weapon->position, VGet(10.0f, 10.0f, 10.0f));
 	}
 
 	MATRIX rotationY = MGetRotY(rotation.y);
@@ -66,25 +65,21 @@ void Player::Update()
 	VECTOR lower = VAdd(position, VGet(0, -1000, 0));//10m下
 	VECTOR hit;
 
+	//地形との当たり判定
 	Field* pF = GetScene()->FindGameObject<Field>();
 	if (pF->CollisionLine(&hit, upper, lower))
 	{
 		position = hit;
 	}
 
-	Camera* pCamera = GetScene()->FindGameObject<Camera>();
-	////cameraクラスからマウスのワールド座標を取得
-	//VECTOR MousPos = pCamera->vec;
-	////マウスの座標をトランスフォーム
-	////VECTOR cTarget = VTransform((MousPos), rotationY);
-
-
-	//VECTOR cTarget = VTransform(VGet(0, 0, 100.0f), rotationY);
-	//pCamera->SetTarget(VAdd(position, cTarget));
+	//カメラをプレイヤーの後ろに固定
+	Camera* pCamera	= GetScene()->FindGameObject<Camera>();
+	VECTOR cTarget = VTransform(VGet(0, 0, 100.0f), rotationY);
+	pCamera->SetTarget(VAdd(position, cTarget));
 	VECTOR cPosition = VTransform(VGet(0, 40.0f, -70.0f), rotationY);
 	pCamera->SetPosition(VAdd(position, cPosition));
 
-	//武器に自機の座標を渡す
+	//武器にプレイヤーの座標を渡す
 	Weapon* pWeapon = GetScene()->FindGameObject<Weapon>();
 	pWeapon->SetPlayerPosition(position);
 
@@ -92,9 +87,6 @@ void Player::Update()
 
 void Player::Draw()
 {
-	//MV1SetRotationXYZ(hModel, rotation);
-	//MV1SetPosition(hModel, position);
-
 	MATRIX matrix;
 	//移動行列
 	MATRIX mTranslate = MGetTranslate(position);

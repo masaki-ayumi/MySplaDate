@@ -2,16 +2,16 @@
 #include <list>
 #include "../Library/gameObject.h"
 
-class Bullet;
+class Shot;
 
-class BulletManager : public GameObject
+class ShotManager : public GameObject
 {
 public:
-	BulletManager(SceneBase* scene);
-	~BulletManager();
+	ShotManager(SceneBase* scene);
+	~ShotManager();
 	void Update();
 	void Draw();
 	void Create(VECTOR pos, VECTOR vel);
 private:
-	std::list<Bullet*> bullets;
+	std::list<Shot*> shots;
 };

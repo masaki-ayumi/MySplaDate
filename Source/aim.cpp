@@ -3,10 +3,11 @@
 
 Aim::Aim(SceneBase * scene)
 {
+	//照準用画像の読み込み
 	aimGraph = LoadGraph("data\\graph\\aim.png");
-	//マウスの位置を画面中央に固定
-	//SetMousePoint(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	//マウスの位置を画面中央付近に固定
 	SetMousePoint(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 100);
+	//マウス非表示
 	SetMouseDispFlag(false);
 }
 

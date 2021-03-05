@@ -138,8 +138,8 @@
     <ClInclude Include="Source\aim.h" />
     <ClInclude Include="Source\Axis.h" />
     <ClInclude Include="Source\bootScene.h" />
-    <ClInclude Include="Source\bullet.h" />
-    <ClInclude Include="Source\bulletManager.h" />
+    <ClInclude Include="Source\shot.h" />
+    <ClInclude Include="Source\shotManager.h" />
     <ClInclude Include="Source\camera.h" />
     <ClInclude Include="Source\config.h" />
     <ClInclude Include="Source\debugScreen.h" />
@@ -159,8 +159,8 @@
     <ClCompile Include="Source\aim.cpp" />
     <ClCompile Include="Source\Axis.cpp" />
     <ClCompile Include="Source\bootScene.cpp" />
-    <ClCompile Include="Source\bullet.cpp" />
-    <ClCompile Include="Source\bulletManager.cpp" />
+    <ClCompile Include="Source\shot.cpp" />
+    <ClCompile Include="Source\shotManager.cpp" />
     <ClCompile Include="Source\camera.cpp" />
     <ClCompile Include="Source\debugScreen.cpp" />
     <ClCompile Include="Source\field.cpp" />

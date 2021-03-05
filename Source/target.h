@@ -8,6 +8,7 @@ public:
 	~Target();
 	void Update();
 	void Draw();
+	//’e‚Æ‚Ì“–‚½‚è”»’è
 	bool CollisionSphere(VECTOR CenterPos,float r);
 private:
 	int hModel;
