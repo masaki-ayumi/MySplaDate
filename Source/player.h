@@ -1,6 +1,8 @@
 #pragma once
 #include "../Library/gameObject.h"
-
+/// <summary>
+/// プレイヤークラス
+/// </summary>
 class Player : public GameObject
 {
 public:

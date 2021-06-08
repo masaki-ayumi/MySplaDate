@@ -1,10 +1,12 @@
 #pragma once
 #include "../Library/gameObject.h"
-
+/// <summary>
+/// ショットクラス
+/// </summary>
 class Shot :public GameObject {
 public:
 	/// <summary>
-	/// Bulletのインスタンスを作るときに自機位置と移動値を受け取る
+	/// Shotのインスタンスを作るときに自機位置と移動値を受け取る
 	/// </summary>
 	/// <param name="scene"></param>
 	/// <param name="pos">プレイヤー位置</param>

@@ -1,7 +1,9 @@
 #pragma once
 #include <list>
 #include "../Library/gameObject.h"
-
+/// <summary>
+/// ショットを管理するクラス
+/// </summary>
 class Shot;
 
 class ShotManager : public GameObject

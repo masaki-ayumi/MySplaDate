@@ -18,6 +18,7 @@ Aim::~Aim()
 
 void Aim::Update()
 {
+	//照準画像の座標をマウス座標の下に設定
 	GetMousePoint(&mouseX, &mouseY);
 	graphX = mouseX - GRAPH_HALF;
 	graphY = mouseY - GRAPH_HALF + 100;

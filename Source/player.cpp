@@ -96,7 +96,7 @@ void Player::Draw()
 	matrix = MMult(mRotationY, mTranslate);
 
 	Weapon* weapon = GetScene()->FindGameObject<Weapon>();
-	//Ž©‹@‚Ì‰ñ“]s—ñ‚ð“n‚·
+	//ƒvƒŒƒCƒ„[‚Ì‰ñ“]s—ñ‚ð“n‚·
 	weapon->SetPlayerMatrix(mRotationY);
 
 	MV1SetMatrix(hModel, matrix);

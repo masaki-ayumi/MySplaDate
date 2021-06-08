@@ -1,6 +1,8 @@
 #pragma once
 #include "../Library/gameObject.h"
-
+/// <summary>
+/// áŠQ•¨‚ÌƒNƒ‰ƒX
+/// </summary>
 class Target : public GameObject
 {
 public:
@@ -8,7 +10,12 @@ public:
 	~Target();
 	void Update();
 	void Draw();
-	//’e‚Æ‚Ì“–‚½‚è”»’è
+	/// <summary>
+	/// ’e‚Æ‹…‘Ì‚Ì‚ ‚½‚è”»’èŠÖ”
+	/// </summary>
+	/// <param name="CenterPos">‹…‘Ì‚Ì’†SÀ•W</param>
+	/// <param name="r">‹…‘Ì‚Ì”¼Œa</param>
+	/// <returns>“–‚½‚Á‚½‚çáŠQ•¨‚Ìƒ‚ƒfƒ‹‚ğÁ‚·</returns>
 	bool CollisionSphere(VECTOR CenterPos,float r);
 private:
 	int hModel;

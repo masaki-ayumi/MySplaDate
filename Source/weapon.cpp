@@ -1,7 +1,6 @@
 #include "weapon.h"
 #include <DxLib.h>
 #include <assert.h>
-//#include "shot.h"
 
 Weapon::Weapon(SceneBase*scene) :GameObject(scene)
 {
@@ -35,10 +34,4 @@ void Weapon::Draw()
 
 	MV1SetMatrix(hModel, matrix);
 	MV1DrawModel(hModel);
-}
-
-void Weapon::SetPlayerPosition(VECTOR _position)
-{
-	//プレイヤーの頭上に座標をセット
-	position = VAdd(_position,VGet(0,20.0f,0.0f));
 }

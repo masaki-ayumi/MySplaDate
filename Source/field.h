@@ -2,6 +2,9 @@
 
 #include "../Library/gameObject.h"
 
+/// <summary>
+/// 地形クラス
+/// </summary>
 class  Field : public GameObject
 {
 public:

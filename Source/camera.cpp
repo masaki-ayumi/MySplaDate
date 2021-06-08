@@ -18,6 +18,6 @@ void Camera::Update()
 
 void Camera::Draw()
 {
-	//自機の後ろに固定
+	//プレイヤーの後ろに固定
 	SetCameraPositionAndTarget_UpVecY(position, target);
 }

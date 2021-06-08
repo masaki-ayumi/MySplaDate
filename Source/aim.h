@@ -1,7 +1,9 @@
 #pragma once
 #include "../Library/gameObject.h"
 
-
+/// <summary>
+/// Æ€—pƒNƒ‰ƒX
+/// </summary>
 class Aim : public GameObject
 {
 public:

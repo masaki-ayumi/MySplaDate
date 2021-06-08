@@ -20,7 +20,7 @@ Shot::Shot(SceneBase* scene, VECTOR pos, VECTOR vel) :GameObject(scene)
 	worldPos = ConvScreenPosToWorldPos(VGet(Mx+ir, My, 1.0f));
 
 
-	//自機の座標とマウスのワールド座標を引いて弾のベクトルを取得
+	//プレイヤーの座標とマウスのワールド座標を引いて弾のベクトルを取得
 	vector = VSub(worldPos, playerPosition);
 }
 
