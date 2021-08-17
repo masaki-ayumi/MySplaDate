@@ -26,15 +26,33 @@
     <ClCompile Include="Library\sceneBase.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Axis.cpp" />
-    <ClCompile Include="Source\player.cpp" />
-    <ClCompile Include="Source\camera.cpp" />
-    <ClCompile Include="Source\field.cpp" />
-    <ClCompile Include="Source\weapon.cpp" />
-    <ClCompile Include="Source\target.cpp" />
-    <ClCompile Include="Source\aim.cpp" />
-    <ClCompile Include="Source\shot.cpp" />
-    <ClCompile Include="Source\shotManager.cpp" />
+    <ClCompile Include="Source\aim.cpp">
+      <Filter>Aim</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Axis.cpp">
+      <Filter>Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\field.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\shot.cpp">
+      <Filter>Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\shotManager.cpp">
+      <Filter>Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\target.cpp">
+      <Filter>Target</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\weapon.cpp">
+      <Filter>Weapon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\config.h" />
@@ -63,15 +81,33 @@
     <ClInclude Include="Source\debugScreen.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Axis.h" />
-    <ClInclude Include="Source\camera.h" />
-    <ClInclude Include="Source\player.h" />
-    <ClInclude Include="Source\field.h" />
-    <ClInclude Include="Source\weapon.h" />
-    <ClInclude Include="Source\target.h" />
-    <ClInclude Include="Source\aim.h" />
-    <ClInclude Include="Source\shot.h" />
-    <ClInclude Include="Source\shotManager.h" />
+    <ClInclude Include="Source\aim.h">
+      <Filter>Aim</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Axis.h">
+      <Filter>Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\field.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\shot.h">
+      <Filter>Shot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\shotManager.h">
+      <Filter>Shot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\target.h">
+      <Filter>Target</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\weapon.h">
+      <Filter>Weapon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -88,6 +124,30 @@
     </Filter>
     <Filter Include="common">
       <UniqueIdentifier>{826397a3-7051-44be-b23c-f5dda703c9f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aim">
+      <UniqueIdentifier>{3fa69ae0-ff8b-4c0b-b5c8-6020594cb43c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Axis">
+      <UniqueIdentifier>{9281fac2-eac6-4d2e-bda9-9175bcba231e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{96fee9c9-e670-4409-897c-c0ef17df8c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Field">
+      <UniqueIdentifier>{9b31bda8-77ff-4b59-bc91-d31f2900d376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{cee43950-73d9-487e-b3c5-3df2898af661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shot">
+      <UniqueIdentifier>{13e90d93-a4b5-4f3b-a373-3bf33e9a1ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Target">
+      <UniqueIdentifier>{880901d5-a2d4-4792-84bc-0a9409098b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Weapon">
+      <UniqueIdentifier>{f9d7b098-68b8-4e57-b036-fd43c59a3d0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
